@@ -50,18 +50,19 @@ ul.posts li {
 }
 
 /* ---------- About Page ---------- */
-div.about-row {
-    display: flex;
+div.about-container {
+	padding: 20px 40px 40px;
+	max-width: 80vw;
+	display: flex;
 }
 
-#about-me-image-container{
-    max-height:480px;
-    height: 480px;
-    margin-bottom: 2em;
-    margin-right: 2em;
+#about-me-text {
+    flex: 1 1 auto;
 }
 
 #about-me-image-container img {
-    width: 100%;
-    height: 100%;
+    margin: 5em 5em 0 0;
+    width: 400px;
+    object-fit: contain;
+    align-self: flex-start;
 }
