@@ -1,8 +1,6 @@
-.env
-.DS_Store
-.s3-website.json
-node_modules/
-
 _site
+Gemfile.lock
+*.gem
 .sass-cache
 .jekyll-metadata
+.DS_Store
