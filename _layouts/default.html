@@ -1,31 +1,24 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  {% include head.html %}
+
 </head>
+<body id="{% if page.title %}{{ page.title | slugify }}{% else %}home{% endif %}" class="{{ page.layout | downcase }}-layout">
+  
+  {% include header.html %}
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
-    </nav>
-    <div class="container">
+  <main class="💈">
 
-        {{ content }}
+    {{ content }}
+    
+  </main>
 
-    </div><!-- /.container -->
-    <footer>
-        <ul>
-            <li><a href="mailto:terrell.systems@gmail.com">email</a></li>
-            <li><a href="https://github.com/rm-terrell">github.com/rm-terrell</a></li>
-            <li><a href="#">RM's CV</a></li>
-        </ul>
-    </footer>
+  {% include footer.html %}
+
 </body>
-
 </html>
