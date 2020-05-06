@@ -3,7 +3,7 @@ layout: post
 title: "About the Author"
 author: "Reed Terrell"
 categories: journal
-tags: [documentation,sample]
+tags: []
 image: st_george_mtb.jpg
 ---
 
