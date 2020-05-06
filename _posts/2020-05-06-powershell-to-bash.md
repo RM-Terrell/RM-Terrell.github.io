@@ -7,8 +7,6 @@ tags: [windows,bash,powershell]
 image: utah_rocks.jpg
 ---
 
-# Quickly switching from Powershell /  Command Prompt to Bash with Windows Subsystem Linux
-
 Although I was born and raised using Windows machines, the majority of my software development has been done on MacOs and Linux. As such for a while now I've been searching for ways to maximize all my Linux command line muscle memory, but within a Windows environment. I've tried a few things over the years. Git Bash was one of the first tools I found that allowed the use of Bash commands within Windows, granted with a few quirks and problems of its own. The introduction of Windows Subsystem Linux however put an end to my need for Git Bash, now that I can access a (mostly) full fledged Linux OS right there inside my Windows machine.
 
 Up until very recently though I had been using the WSL side of my computer one of two ways. One was by running the Ubuntu launcher as a separate terminal window which landed me in the root of the WSL machine. I then needed to furiously `cd` my way into whatever directory I needed to work in (or bashrc alias it). The other was by switching shells within Visual Studio Code which automatically took care of the directory changes. But what if I wanted to work outside of VScode? Or blend magics that were never meant to blend and run a powershell command, _followed by_ a bash command right after it in the same terminal window?? Well I found a way to do it.
