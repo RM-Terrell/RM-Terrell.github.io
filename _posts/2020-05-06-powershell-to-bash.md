@@ -36,3 +36,5 @@ results in
 And VOILA! I'm now running Ubuntu bash in the same directory inside a Powershell terminal. I have not yet found a way to switch _back_ to Powershell or CMD from bash but will update this post if I do.
 
 Happy bashing on Windows!
+
+May 7th 2020 Update: Running the `exit` command is one way to drop back into Powershell or CMD from bash.
