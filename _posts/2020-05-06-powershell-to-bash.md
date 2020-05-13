@@ -2,8 +2,9 @@
 layout: post
 title: "Quickly switching from Powershell to Bash using WSL"
 author: "Reed Terrell"
+photo_credit: "Sam Kahsnitz"
 categories: journal
-tags: [windows,bash,powershell]
+tags: [windows,bash,powershell,linux]
 image: utah_rocks.jpg
 ---
 

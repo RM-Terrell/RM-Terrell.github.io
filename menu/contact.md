@@ -3,6 +3,9 @@ layout: page
 title: Contact
 ---
 
-For general contact my email is terrell.systems@gmail.com
+For general contact email terrell.systems@gmail.com
 
-My GitHub account is rm-terrell
+My Github [here](https://github.com/RM-Terrell)
+
+## Photo Contributions
+Sam Kahsnitz [Instagram](https://www.instagram.com/samridesbaiku/)

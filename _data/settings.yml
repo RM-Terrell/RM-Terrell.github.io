@@ -27,3 +27,5 @@ sharing_button_prompt: 'Feel free to share!'
 related_posts: 'You may also enjoy:'
 
 post_date_prefix: 'Written on'
+
+photo_credit_prefix: 'Photo credit of '
