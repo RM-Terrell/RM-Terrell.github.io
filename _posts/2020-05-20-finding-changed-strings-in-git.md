@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Finding a changed string in git history"
+title: "Finding a changed string in Git history"
 author: "Reed Terrell"
 photo_credit: "Reed Terrell"
 categories: journal
-tags: []
+tags: [git, scss, css, html]
 image: flatirons.jpg
 ---
 
