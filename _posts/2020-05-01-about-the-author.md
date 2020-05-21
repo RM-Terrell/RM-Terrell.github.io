@@ -2,7 +2,7 @@
 layout: post
 title: "About the Author"
 author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+photo_credit: "Sam Kahsnitz"
 categories: journal
 tags: []
 image: st_george_mtb.jpg
