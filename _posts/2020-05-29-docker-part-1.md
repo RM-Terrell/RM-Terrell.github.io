@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reed VS Docker Part 1: Nothing is as easy as it looks."
+title: "Reed VS Docker Round 1: Nothing is as easy as it looks."
 author: "Reed Terrell"
 photo_credit: "Reed Terrell"
 categories: journal
