@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reed VS Docker Round 1: Nothing is as easy as it looks."
+title: "Reed vs Docker Round 1: Nothing is as easy as it looks."
 author: "Reed Terrell"
 photo_credit: "Reed Terrell"
 categories: journal
@@ -8,15 +8,15 @@ tags: [docker, react, django, python, javascript]
 image: floyen.jpg
 ---
 
-What follows are the adventures of me attempting to Dockerize an old application I wrote and in the process totally rewriting it. Those of you experienced in Docker may find yourself yelling at your monitor, laughing or crying at my misunderstandings, maybe a bit of both. You've been warned. This isn't going to be pretty. But hopefully from my struggles someone out there may learning something, get some fresh perspective on newbie misunderstandings of Docker, or at least get a good laugh. Lets roll.
+What follows are my attempts to Dockerize an old application I wrote and in the process totally rewriting it. Those of you experienced in Docker may find yourself yelling at your monitor, laughing or crying at my misunderstandings, maybe a bit of both. You've been warned. This isn't going to be pretty. But hopefully from my struggles someone out there may learning something, get some fresh perspective on newbie misunderstandings of Docker, or at least get a good laugh. Lets roll.
 
 ## The Application
 
 First some background. Please skip this section if you want to get right to me face-rolling some Dockerfiles. The application in question lives in [this repo](https://github.com/RM-Terrell/project-orbital) and is, in a way the oldest application I've written though its gone through many revisions.
 
-At my previous job I worked as a Data Analyst, and during this time was self teaching myself JavaScript and web development in general. The other Analysts there had a lot of math they needed to do on a regular basis and as these things go we didn't yet have a standardized way of doing this math, which lead to slight inconsistencies in the our results. Things like converting standard error to standard deviation and such. So I decided to solve this problem with my new found skills. I made a very _very_ simple webpage that contained input fields where an analyst could place starting values, click a button, and get results. All converted by JavaScript calculations that were vetted by our lead statistician. It was a dreadful little webpage that I improved a lot over the months, and eventually years as it has continued to be the app that I use to learn new stuff with. It was also the app that lead the COO of that company to ask me "hey wanna get paid for that some day?" and helped launch my career.
+At my previous job I worked as a Data Analyst, and during this time was self teaching myself JavaScript and web development in general. The other Analysts there had a lot of math they needed to do on a regular basis and as these things go we didn't yet have a standardized way of doing this math, which lead to slight inconsistencies in our results. Things like converting standard error to standard deviation and such and even with the same process of calculation, simple human error can result in inconsistencies. So I decided to solve this problem with my new found skills. I made a very _very_ simple webpage that contained input fields where an analyst could place starting values, click a button, and get results. All converted by JavaScript calculations that were vetted by our lead statistician. It was a dreadful little webpage that I improved a lot over the months, and eventually years as it has continued to be the app that I use to learn new stuff with. It was also the app that lead the COO of that company to ask me "hey wanna get paid for that some day?" and helped launch my career.
 
-The application had a year or so prior to this post, evolved from a simple pure HTML / JS page to being a Django backend that served a React powered front end. I think at one point it was even a hare brained Electron app. I'd wanted to learn React and show off some of my new found Python / Django skills I had since acquired at my new job. It was a little odd however, in that I had opted to not use the famous Create React App (CRA) repo to build and run the React side of things but had instead rolled a different solution from someones blog post I'd since lost. It used Webpack and Babel, to take the relevant JS, CSS, and HTML code, build it all in a bundle, and then this static bundle was loaded by a Django extension called Webpack Loader, which used Django to ultimately serve it to the user in a template. That last detail is important, and I didn't fully understand it at the time which caused significant confusion later.
+The application had a year or so prior to this post evolved from a simple pure HTML / JS page to being a Django backend that served a React powered front end. I think at one point it was even a hare brained Electron app. I'd wanted to learn React and show off some of my new found Python / Django skills I had since acquired at my new job. The app was a little odd however, in that I had opted to not use the famous Create React App (CRA) repo to build and run the React side of things, but had instead rolled a different solution from someones blog post I'd since lost. It used Webpack and Babel, to take the relevant JS, CSS, and HTML code, build it all in a bundle, and then this static bundle was loaded by a Django extension called Webpack Loader, which used Django to ultimately serve it to the user in a template. That last detail is important, and I didn't fully understand it at the time which caused significant confusion later on.
 
 Fast forwarding to present, and I'd decided I need to learn Docker. I'd completed the first few sections of Pluralsight's Docker path, read a few articles and even looked over some Dockerized apps at my current job. Totally 100% prepared to get my hands dirty.
 
@@ -24,7 +24,7 @@ Fast forwarding to present, and I'd decided I need to learn Docker. I'd complete
 
 In my reading on Docker I had came across the `docker-compose` feature and the concept of splitting the backend of your application into one container, and the frontend into another. This allowed you to take down or put up the two separate from one another, scale them, switch one out for another, etc. That sounded seriously cool to me, and armed with no other good reason than that I went to work. Lesson learned in retrospect: "this sounds sweet" is not _always_ a good reason to do something.
 
-First goal, split the frontend and backend code nicely into their own directories and make the app functional again. The thought of doing this even a year or two ago would have scared the crap out of me so the fact that I went at it with such zeal was a nice reminder I _had_ gotten better at all this.
+First goal, split the frontend and backend code nicely into their own directories and make the app functional again, pre Docker. The thought of doing this even a year or two ago would have scared the crap out of me so the fact that I went at it with such zeal was a nice reminder I _had_ gotten better at all this.
 
 The initial file structure looked like this.
 
@@ -34,13 +34,13 @@ So things were already part way there, with the `django_orbital` directory conta
 
 ![new_hotness](/assets/img/docker-part-1/new_file_struct.png)
 
-with the `django_orbital` directory renamed to be more general as `api` and the frontend nicely unified in one directory. You can see I also tossed in a `Dockerfile` in each directory, and a `docker-compose.yml` in the root, though they were empty at this point. And somehow I managed to do everything right in changing paths because the darn thing worked first try when building locally. Heres a look at the UI's old ugly mug in its newly refactored glory.
+with the "django_orbital" directory renamed to be more general as "api" and the frontend nicely unified in one directory. You can see I also tossed in a `Dockerfile` in each directory, and a `docker-compose.yml` in the root, though they were empty at this point. And somehow I managed to do everything right in changing paths because the darn thing worked first try when building locally. Heres a look at the UIs old ugly mug in its newly refactored glory.
 
 ![powersh](/assets/img/docker-part-1/old_ui.png)
 
 ## Docker Time
 
-Now to actually build some Docker containers and compose them. Looking at the docs and also some other articles I came up with my first drafts of the Dockerfiles. I didn't feel comfortable fully writing them from scratch yet as I was at that point learning wise were the pieces weren't really all in my head yet. So I did what every good dev does when they're learning tech and copy pasted it off somewhere on Stackoverflow.
+Now to actually build some Docker containers and compose them. Looking at the docs and also some other articles, I came up with my first drafts of the Dockerfiles. I didn't feel comfortable fully writing them from scratch yet as I was at that point learning wise were the pieces weren't really all in my head yet. Docker was not grokked. So I did what every good dev does when they're learning tech and copy pasted it off somewhere on Stackoverflow.
 
 The Dockerfile for the `api` directory looked like this.
 
@@ -106,7 +106,7 @@ volumes:
   node-modules
 ```
 
-I tentatively fired up my first, non online course
+I tentatively fired up my first, non online course related
 
 ```console
 docker-compose build
@@ -116,13 +116,13 @@ docker-compose build
 
 ![awayyyyyyy_we_go](/assets/img/docker-part-1/and_were_off.png)
 
-And shockingly it built. However on running
+And shockingly it built. However on running:
 
 ```console
 docker-compose up
 ```
 
-to actually launch it all I encountered the error
+I encountered the error:
 
 ```console
 python: can't open file 'manage.py': [Errno 2] No such file or directory
