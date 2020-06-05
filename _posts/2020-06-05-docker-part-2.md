@@ -75,7 +75,7 @@ Heres the old image history with two `RUN` commands:
 
 ![two_layers](/assets/img/docker-part-2/two_layers.png)
 
-Two layers, 167mb and 203mb respectively for a total between them of 370mb. And heres the result of the refactor to one `RUN` command:
+The two `npm install` commands create two layers, 167mb and 203mb respectively for a total between them of 370mb. And heres the result of the refactor to one `RUN` command:
 
 ![one_layer](/assets/img/docker-part-2/one_layer.png)
 
