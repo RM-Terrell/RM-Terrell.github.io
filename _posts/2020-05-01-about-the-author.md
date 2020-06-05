@@ -16,5 +16,5 @@ nerds playing a video game called Eve: Online. Before he knew it he was fully in
 video games don't teach you anything.
 
 Reed's main programming languages are Python and Javascript, with previous experience with C#, and some tinkering with Rust and C++. He has been actively programming
-since 2016, and working full time as a developer since January of 2018. When he's not busy hiding from the Coronavirus he skis, mountain bikes, runs, and rock climbs.
+since 2016, and working full time as a developer since January of 2018. When he's not brawling with CSS rules he skis, mountain bikes, runs, and rock climbs.
 He also still plays too many video games.

@@ -157,7 +157,7 @@ the `up` command built the images and ran the containers with no more error abou
 
 ![attach_shell](/assets/img/docker-part-1/attach_shell.png)
 
-## What is a container anyways?
+## What is a Container Anyways?
 
 From there I was able to explore around the container and see all the code in it. I found the `app` directory and then all the api code.....but only the api code. No sign of the frontend contents. And sure enough on trying to navigate `localhost:8000` where the app was running I was presented with the error
 
@@ -198,7 +198,7 @@ Suddenly it all made sense. The Django app running in the `api` container would 
 
 This solution had a few advantages. First it simplified the Django backend of my app down to just the REST API. This made Django a bit overkill for my current needs but whatever. I like Django and can grow into it. Maybe even get creative and swap it with Flask if I feel like it, and the same goes for the frontend. Since the two systems will communicate with REST API calls only, they can be interchanged more easily. Maybe I'll make a Vue system, containerize it and swap it. Why not? This severs the coupling created by the URL template load and Webpack Loader. Second it gets my hands dirty with CRA and gives me a really good chance to comb through my old code and improve it as I copy the old components over into CRA. Also I badly needed to update Django to a newer version due to an old vulnerability and more importantly because I like new shiny things. Django 3.0 coming in hot.
 
-With that I put on my fireman suit and burned it all down. Again. I think this make 4-5 times I've done that with this repo. The final project file structure looked like this:
+With that I put on my fireman suit and burned it all down. Again. I think this makes 4-5 times I've done that with this repo. The final project file structure looked like this:
 
 ![pretty](/assets/img/docker-part-1/final_structure.png)
 
@@ -282,7 +282,7 @@ One interesting note that I saw omitted in some blog posts, and people in commen
     tty: true
 ```
 
-in the compose file. Without them the container will exit, and the React app will not be served on the port.
+in the compose file. Without them the CRA container will exit, and the React app will not be served on the port.
 
 And with that the pieces are in place. I have successfully Dockerized a Django REST API, a CRA React application, and strung them together with a compose file. What will follow next is copying back over all my React code, revising them, expanding the REST API functionality to inform the React frontend, and also optimizing the Dockerfiles.
 
