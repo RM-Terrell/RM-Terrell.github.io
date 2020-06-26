@@ -14,7 +14,7 @@ I'm a bit of a fanboy of Visual Studio Code. My coworkers are probably sick of m
 
 This one may seem obvious to some but on the list of "things I use a lot" its right at the top and deserves some mention and exploration.
 
-To quickly access the integrated terminal in VSCode on Windows you can use the following shortcut: <kbd>CTRL</kbd>+<kbd>\`</kbd> (same command on MacOS). Note I will be using the default VSCode keymap shortcuts for all commands. You'll need to translate if you use a different keymap (more on that later).
+To quickly access the integrated terminal in VSCode on Windows you can use the following shortcut: <kbd>CTRL</kbd>+<kbd>`</kbd> (same command on MacOS). Note that I will be using the default VSCode keymap shortcuts for all commands. You'll need to translate if you use a different keymap (more on that later).
 
 This will simply toggle the console without clearing its contents or canceling any running tasks. Here is the terminal open and running ZSH.
 
