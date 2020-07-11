@@ -4,7 +4,7 @@ title: "Reed vs Docker Round 1: Nothing is as easy as it looks."
 author: "Reed Terrell"
 photo_credit: "Reed Terrell"
 categories: journal
-tags: [docker, react, django, python, javascript]
+tags: [docker, react, django, python, javascript, project orbital]
 image: floyen.jpg
 ---
 
