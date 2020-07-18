@@ -121,7 +121,7 @@ One final thing is a shortcut that has saved me a huge amount of time and helped
 
 For Windows use: <kbd>ALT</kbd>+<kbd>SHIFT</kbd>+<KBD>RIGHT ARROW</KBD>
 
-And for MacOS use: <kbd>CMD</kbd>+<kbd>SHIFT</kbd>+<KBD>RIGHT ARROW</KBD>
+And for MacOS use: <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<KBD>RIGHT ARROW</KBD>
 
 And every time you hit the right arrow the selection will keep expanding in a "smart" way that ends at quotes and other major symmetrical divisions. Use the left arrow to narrow the selection.
 
