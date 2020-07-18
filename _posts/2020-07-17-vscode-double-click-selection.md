@@ -18,20 +18,20 @@ Very annoying when you do web development and are frequently working with HTML /
 
 Turns out, its something you can modify. Within VSCodes absurdly large compliment of settings there exists a setting called:
 
-```console
+```json
     "editor.wordSeparators"
 ```
 
 By default, the value of it is the following:
 
-```console
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+```json
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 ```
 
 See the dash after the `()`? This tells vscode to treat anything at that character as another word, and thus it doesn't highlight past it on double click. Notice there is no underscore in the set of characters? So if we just go ahead and remove the `-` we get the following final setting:
 
-```console
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+```json
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
 ```
 
 And now double clicking dashed variables highlights the whole thing, assuming none of those other characters are present. This is a great setting to know about in general, as you can edit it to your liking to tweak the highlight behavior depending what languages / technologies you work with.
