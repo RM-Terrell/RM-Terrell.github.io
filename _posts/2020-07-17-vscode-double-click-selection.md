@@ -19,7 +19,7 @@ Very annoying when you do web development and are frequently working with HTML /
 Turns out, its something you can modify. Within VSCodes absurdly large compliment of settings there exists a setting called:
 
 ```console
-editor.wordSeparators
+    "editor.wordSeparators"
 ```
 
 By default, the value of it is the following:
