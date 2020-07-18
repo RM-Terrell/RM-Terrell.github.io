@@ -16,13 +16,7 @@ A small thing in VSCode that has always irked me a little bit has been how doubl
 
 Very annoying when you do web development and are frequently working with HTML / CSS classes which are dashed, and maybe even working with them along side camel or snake cased variables. You can always use <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<KBD>RIGHT ARROW</KBD> (on MacOS, use Alt on Windows) to then highlight the whole thing, but thats just annoying compared to a simple double click. Sure would be nice if they all acted the same right?
 
-Turns out, its something you can modify. Within VSCodes absurdly large compliment of settings there exists a setting called:
-
-```json
-    "editor.wordSeparators"
-```
-
-By default, the value of it is the following:
+Turns out, its something you can modify. Within VSCodes absurdly large compliment of settings there exists a setting called `editor.wordSeparators`. By default, the value of it is the following:
 
 ```json
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
