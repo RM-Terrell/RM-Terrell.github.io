@@ -239,10 +239,10 @@ Odd. The file is there. What do you mean you can't find it?? Look harder.
 Well it turns out the Django app uses Django's `collectstatic` system which snorts through the file structure and collects together all the static files and serves them on a URL. Remember this from a few lines up?
 
 ```html
-    <script src="{% static 'dist/index.js' %}"></script>
+    <script src="{ static 'dist/index.js' }"></script>
 ```
 
-The `{% static .... %}` thing is a generated URL that comes from Django that links to files from the static host URL. I patted myself on the back for inadvertently using a feature without knowing it. Copy paste can kill. After running our command for `collectstatic` it worked!! I had my first running React component in the project along side a whole bunch of prexisting Django / jQuery / Bootstrap code. Firing up the React devtools confirmed that React was being detected and I could inspect my very simple component using those tools.
+The `{ static .... }` thing is a generated URL that comes from Django that links to files from the static host URL. I patted myself on the back for inadvertently using a feature without knowing it. Copy paste can kill. After running our command for `collectstatic` it worked!! I had my first running React component in the project along side a whole bunch of prexisting Django / jQuery / Bootstrap code. Firing up the React devtools confirmed that React was being detected and I could inspect my very simple component using those tools.
 
 ## Jest Setup
 
