@@ -212,7 +212,7 @@ In the `.html` code that would hold my "Hello World" component I deleted all the
 
 ```html
     <div id="root"></div>
-    <script src="{% static 'dist/index.js' %}"></script>
+    <script src="{ static 'dist/index.js' }"></script>
 ```
 
 As is, this resulted in an empty webpage (sans the template loaded items), an empty `<div>` with an id of "root", and a 404 error about not finding the script. No worries, I hadn't written it yet or built the final version with Webpack. On the second line you see a linked `.js` file. That file would be the final built version from Webpack, but I still needed to write the entry point `.js` file for Webpack to use. This would be built along the path I had defined in the `webpack.config.js` for `entry`, in this case `/static/js/index.js`. That file ended up like this:
