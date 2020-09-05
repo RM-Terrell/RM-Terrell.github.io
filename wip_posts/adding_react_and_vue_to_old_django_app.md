@@ -29,7 +29,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 ```
-    <script src="{% static 'dist/index.js' %}"></script>
+    <script src="{ static 'dist/index.js' }"></script>
 ```
 
 GEThttp://172.16.127.128/static/dist/test.js
