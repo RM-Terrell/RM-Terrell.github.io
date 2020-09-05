@@ -191,7 +191,7 @@ Make sure to set `mode` for the build setting. Switch to `production` for the fi
 
 To set up the config for Babel I created the following `.babelrc` file. Once again dashingly pilfered from somewhere on the internet.
 
-```.babelrc
+```
 {
   "presets": [
     "@babel/preset-react",
