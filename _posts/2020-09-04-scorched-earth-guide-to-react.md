@@ -355,9 +355,7 @@ and its template HTML file `welcome.html`
 
 <body>
   <div>
-{% raw  %}
-    Welcome to this demo site, {{ user_name }}!
-{% endraw  %}
+    Welcome to this demo site, {% raw %}{{ user_name }}{% endraw %}!
   </div>
 </body>
 </html>
@@ -365,7 +363,7 @@ and its template HTML file `welcome.html`
 
 In this example the user info is pulled from the request, and sent to the front end template so that the end result would output the user name dynamically based on log in. I realize there are ways this could all be refactored to not need the back end call at all but lets roll with it as an example because sometimes you 100% need data from the backend.
 
-The problem here, is that since React runs entirely in JavaScript files, the `{{ }}` or {% raw %} `{% %}` {% endraw %} syntax for grabbing Django data can't be used in Javascript. Only HTML files loaded by the view, or inline scripts _in_ those HTML files. So how do we build this page in React while still making use of the Django variable?
+The problem here, is that since React runs entirely in JavaScript files, the {% raw %}`{{ }}`{% endraw %} or {% raw %}`{% %}`{% endraw %} syntax for grabbing Django data can't be used in Javascript. Only HTML files loaded by the view, or inline scripts _in_ those HTML files. So how do we build this page in React while still making use of the Django variable?
 
 In newer versions of Django there is a template tag purpose built for this called `json_script`, its docs can be found [here](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#json-script). It takes data from your backend view, and safely parses it into a JSON object which can then be directly accessed by any JavaScript code on that page. This seems like a solid standardized approach, but of course the version of Django I was using didn't have it. I'm also not 100% a fan of this personally because it adds an odd, somewhat ambiguous layer of abstraction between the front and backend. Some people may call this good because "oh man but what are you going to do when you want to swap out your frontend every other weekend??" Yeah I work at a company that has been using jQuery for longer than I've been coding. I'd rather it be clear and easy to work with. With `json_script`, your data from the view gets parsed into a JSON object you don't really write and just have to know is there in the final render. I could see this being very confusing to newer programmers on the team or just people who've never seen the code before. Or me in 6 months. It also confuses the hell out of ESLINT and VScode.
 
@@ -383,7 +381,7 @@ A slightly more explicit (but still more layered than I like) solution that I ul
     <div id="root"></div>
 </body>
 <script>
-  let userName = {% raw  %} "{{ user_name }}" {% endraw  %};
+  let userName = {% raw  %}"{{ user_name }}"{% endraw  %};
 </script>
 {% raw  %}
     <script src="{% static 'dist/index.js' %}"></script>
@@ -397,7 +395,7 @@ and then the React component would look something like this
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => <div>Welcome to this demo site, {userName}!</div>;
+const App = () => <div>Welcome to this demo site, {% raw %}{userName}{% endraw %}!</div>;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
