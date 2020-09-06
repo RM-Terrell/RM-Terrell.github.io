@@ -212,7 +212,9 @@ In the `.html` code that would hold my "Hello World" component I deleted all the
 
 ```html
     <div id="root"></div>
-    <script src="{ static 'dist/index.js' }"></script>
+{% raw  %}
+    <script src="{% static 'dist/index.js' %}"></script>
+{% endraw  %}
 ```
 
 As is, this resulted in an empty webpage (sans the template loaded items), an empty `<div>` with an id of "root", and a 404 error about not finding the script. No worries, I hadn't written it yet or built the final version with Webpack. On the second line you see a linked `.js` file. That file would be the final built version from Webpack, but I still needed to write the entry point `.js` file for Webpack to use. This would be built along the path I had defined in the `webpack.config.js` for `entry`, in this case `/static/js/index.js`. That file ended up like this:
@@ -239,7 +241,9 @@ Odd. The file is there. What do you mean you can't find it?? Look harder.
 Well it turns out the Django app uses Django's `collectstatic` system which snorts through the file structure and collects together all the static files and serves them on a URL. Remember this from a few lines up?
 
 ```html
-    <script src="{ static 'dist/index.js' }"></script>
+{% raw  %}
+    <script src="{% static 'dist/index.js' %}"></script>
+{% endraw  %}
 ```
 
 The `{ static .... }` thing is a generated URL that comes from Django that links to files from the static host URL. I patted myself on the back for inadvertently using a feature without knowing it. Copy paste can kill. After running our command for `collectstatic` it worked!! I had my first running React component in the project along side a whole bunch of prexisting Django / jQuery / Bootstrap code. Firing up the React devtools confirmed that React was being detected and I could inspect my very simple component using those tools.
@@ -322,6 +326,115 @@ Neat. After some googling it turns out this is due to how methods like `.fetch()
 ```
 
 And with that I was set. I had React building and running components in one of our webpages along side our existing UI which could now gradually be expanded and / or replaced with React. I had Jest tests running against them, and all under the management of NPM. When I redeployed the code to a test server instead of my VM, it even worked on the first try. I love it when things just work.
+
+## Passing data from Django to React
+
+After getting into building the demo page, I ran into an issue that most everyone who has a view/controller rendered template, and doesn't have a Node.js backend encounters. How do I pass my view/controller (I'm going to stick with Django terminology from now on out and call it a "view") template data to the React frontend? To illustrate the issue here's a pretty standard Django view sending a string to the template via Django's template tag system.
+
+The view which is tied to the URL
+
+```python
+def welcome_view(request):
+    """
+    View for welcoming a user.
+    :param HttpRequest request:
+    :return: HttpResponse
+    """
+    return render(request, 'views/welcome.html', {"user_name": request.user.name})
+```
+
+and its template HTML file `welcome.html`
+
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div>
+{% raw  %}
+    Welcome to this demo site, {{ user_name }}!
+{% endraw  %}
+  </div>
+</body>
+</html>
+```
+
+In this example the user info is pulled from the request, and sent to the front end template so that the end result would output the user name dynamically based on log in. I realize there are ways this could all be refactored to not need the back end call at all but lets roll with it as an example because sometimes you 100% need data from the backend.
+
+The problem here, is that since React runs entirely in JavaScript files, the `{{ }}` or {% raw %} `{% %}` {% endraw %} syntax for grabbing Django data can't be used in Javascript. Only HTML files loaded by the view, or inline scripts _in_ those HTML files. So how do we build this page in React while still making use of the Django variable?
+
+In newer versions of Django there is a template tag purpose built for this called `json_script`, its docs can be found [here](https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#json-script). It takes data from your backend view, and safely parses it into a JSON object which can then be directly accessed by any JavaScript code on that page. This seems like a solid standardized approach, but of course the version of Django I was using didn't have it. I'm also not 100% a fan of this personally because it adds an odd, somewhat ambiguous layer of abstraction between the front and backend. Some people may call this good because "oh man but what are you going to do when you want to swap out your frontend every other weekend??" Yeah I work at a company that has been using jQuery for longer than I've been coding. I'd rather it be clear and easy to work with. With `json_script`, your data from the view gets parsed into a JSON object you don't really write and just have to know is there in the final render. I could see this being very confusing to newer programmers on the team or just people who've never seen the code before. Or me in 6 months. It also confuses the hell out of ESLINT and VScode.
+
+A slightly more explicit (but still more layered than I like) solution that I ultimately went with for the demo and may stick with long term for reasons I get into in a bit, is accessing the Django variables with an inline HTML script, declaring them, and then using them in the JavaScript files. The view code is unchanged, and the HTML code ends up like this
+
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script>
+  let userName = {% raw  %} "{{ user_name }}" {% endraw  %};
+</script>
+{% raw  %}
+    <script src="{% static 'dist/index.js' %}"></script>
+{% endraw  %}
+</html>
+```
+
+and then the React component would look something like this
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => <div>Welcome to this demo site, {userName}!</div>;
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+This works because since we declared the variable `userName` inside the HTML file in an inline script which places it high enough scope wise to be accessible by the loaded `index.js` file.
+
+I still find this solution sub optimal because, once again, we have a fuzzy layer between the back and frontend. The JS variable is declared with a Django variable as its value and then..... who knows? Its not clear what is happening with it unless you search the whole code base and see it being used in a React component. Pray you don't also reuse JS variable names to add to the confusion.
+
+The best solution would involve running the `ReactDOM.render()` method _inside the HTML file_, accessing the Django variable right there in the render method, and passing the value in as a prop. Direct and self documenting. This has a few tricky bits though that have so far prevented me from getting it working, and may involve confusing enough syntax and script links to not be worth it. It would look something like this
+
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script  src='A LINK PATH SOMEHOW IMPORTING THE APP COMPONENT'></script>
+<script  src='A LINK PATH SOMEHOW IMPORTING REACT AND REACTDOM'></script>
+<script>
+  ReactDOM.render(
+    React.createElement(App, {userName: '{% raw %}{{userName}}{% endraw %}'}, null),
+    document.getElementById('root')
+    );
+</script>
+</html>
+```
+
+A few things happening here. First off the `.render()` function looks _very_ different. That is because inside HTML you can't use JSX syntax. That's invalid JS that gets transformed by Babel remember? Well Babel isn't set up to extract inline scripts, and when it does transform our JS files, this is what it gets turned into. JSX-less React. Docs on that [here](https://reactjs.org/docs/react-without-jsx.html). You still have all the features of React, just not in as pretty of a syntax.
+
+Also with this solution the code in `index.js` is gone since that only had the `.render()` method. Its link is gone too. The issue to tackle here is how to then get React, ReactDOM, and the `<App>` component in the HTML file. I can't use `import` commands because those don't work in HTML (not as of this writing), so I'd need to `<script>` link that code somehow without creating new problems like fragile paths.
+
+I think this is the most explicit and clear solution though, if possible. The Django variable is accessed and passed as prop all in one place, its usage is clear and understandable. No cases of "wait why do we have this declared here?" or "Where the hell did this variable come from???". It also scopes the variable to the component(s) that it is needed in. Whether this is the long term solution will be a matter of if I can get those script links working without creating more confusion and fragile code. I will update this post if I find a good solution.
 
 Next up, Vue.js.
 
