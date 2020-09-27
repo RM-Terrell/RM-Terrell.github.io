@@ -10,14 +10,21 @@ image: royal_arch.jpg
 
 I hate greenfield guides. I really do. I know I know, how else are you going to teach the basics without confusing things unnecessarily? But I work in an industry, and at a company with many long running projects that we'd love to drag into the future without resorting to the nuclear solution of "sorry boss, gotta rebuild it from the ground up". Things need to be done in a practical manner that balance dev desire for shiny things that don't suck to work on, with projects that work _now_ and bring value to the company. In my case, we have a long running Django app whose UI is becoming increasingly complex and has outgrown the limitations of its current technologies. On top of that, its running an old version of Django with significant reasons not to update right this second, all inside a CentOS6 VM. Needless to say, I don't need any more "How to Setup React Using Create React App" guides.
 
-Let take count of what I've got to work with.
+Lets take count of what I've got to work with.
+
 
 Outdated Django backend? Check.
+
 No JavaScript tests? Check.
+
 Needs to be implemented gradually without full page rewrites? Check.
+
 Centos6? .....sadly...yes. Check.
+
 Needs to work both with and without an internet connection? (sigh) Check.
+
 Jquery. _VERY_ check.
+
 Lots of existing and sometimes differing standards for HTML / JS code organization? You better believe it.
 
 This isn't greenfield, hell it isn't even brownfield. Welcome to The Scorched Earth Guide to Adding React 16 to Django.
