@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Adding a key:value pair to a list of Javascript objects"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [javascript]
 image: allenspark.jpg

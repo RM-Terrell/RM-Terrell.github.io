@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "The Scorched Earth Guide to Adding React 16 to Django"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [react, javascript, django, webpack, babel, jest]
 image: royal_arch.jpg

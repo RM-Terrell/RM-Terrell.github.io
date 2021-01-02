@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Setting up different Webpack configs for prod and dev"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [webpack, javascript]
 image: loveland_pass.jpg

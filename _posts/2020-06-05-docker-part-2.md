@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Reed vs Docker Round 2: Optimizing Dockerfiles"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+title: "Me vs Docker Round 2: Optimizing Dockerfiles"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [docker, react, django, python, javascript, project orbital]
 image: long_lake.jpg

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Finding a changed string in Git history"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [git, scss, css, html]
 image: flatirons.jpg

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Shoshin 1: body.json() is async"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [javascript, project orbital, shoshin]
 image: walker_ranch.jpg

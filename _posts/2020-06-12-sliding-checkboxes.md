@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Custom Sliding Checkboxes"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [css, html]
 image: bergen_fjords.jpg

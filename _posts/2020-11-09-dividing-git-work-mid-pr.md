@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Dividing a Git branch after opening a PR"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [git, github]
 image: pct.jpg

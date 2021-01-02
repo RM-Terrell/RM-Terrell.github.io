@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Reed vs Docker Round 1: Nothing is as easy as it looks."
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+title: "Me vs Docker Round 1: Nothing is as easy as it looks."
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [docker, react, django, python, javascript, project orbital]
 image: floyen.jpg
@@ -128,7 +128,7 @@ I encountered the error:
 python: can't open file 'manage.py': [Errno 2] No such file or directory
 ```
 
-Turns out you need to actually _COPY_ your project code into the container for it to work. I had succeeded in making an empty Docker container. Nice work Reed. Also no need for postgres in the container yet, also learned a fresh lesson on being consistent about naming directories. `django_orbital` != `api`.
+Turns out you need to actually _COPY_ your project code into the container for it to work. I had succeeded in making an empty Docker container. Nice work. Also no need for postgres in the container yet, also learned a fresh lesson on being consistent about naming directories. `django_orbital` != `api`.
 
 Second pass Dockerfiles and compose file brought me much closer. After tweaking the Dockerfile for the `api` directory to look like this
 

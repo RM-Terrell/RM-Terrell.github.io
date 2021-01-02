@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Changing VSCode's highlighting behavior"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [vscode]
 image: bryggen.jpg

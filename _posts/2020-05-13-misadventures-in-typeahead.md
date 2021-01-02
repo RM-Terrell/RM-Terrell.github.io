@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Misadventures in Jquery Typeahead"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [javascript,jquery,html,typeahead]
 image: norway_bear.jpg

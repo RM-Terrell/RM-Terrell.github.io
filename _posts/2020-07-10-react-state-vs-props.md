@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "React Basics: State vs Props"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [react, javascript, project orbital]
 image: winter_park_trees.jpg

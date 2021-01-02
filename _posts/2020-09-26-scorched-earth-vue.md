@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "The Scorched Earth Guide to Adding Vue 2 to Django"
-author: "Reed Terrell"
-photo_credit: "Reed Terrell"
+author: "RM Terrell"
+photo_credit: "RM Terrell"
 categories: journal
 tags: [vue, javascript, django, webpack, babel, jest]
 image: red_deer.jpg
