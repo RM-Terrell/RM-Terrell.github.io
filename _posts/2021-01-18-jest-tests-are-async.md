@@ -5,7 +5,7 @@ author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
 tags: [javascript, jest, shoshin]
-image: allenspark_2.jpg
+image: whitley.jpg
 ---
 
 Me and async clearly don't have a great relationship, and once again, taking the time to slow down and read the manual is very important. Just because you've never seen `async` used in a test doesn't mean it doesn't exist.
