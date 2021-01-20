@@ -37,7 +37,7 @@ test(`Given the table is rendered, verify it loads some mocked data.`, () => {
 });
 ```
 
-At this point I was just starting with Jest and had used a VSCode extension to auto fill the test boiler plate. Coming from a background of Python testing, QUnit, and Selenium testing (the king of crazy wait statements, this matters in a bit) this all looked pretty reasonable. However on running the test, the assertion for the content that should be in one of the table rows would fail. I knew the mock was working from some previous testing, so I tossed in a `screen.redug()` command to see what the table looked like before the assertion.
+At this point I was just starting with Jest and had used a VSCode extension to auto fill the test boiler plate. Coming from a background of Python testing, QUnit, and Selenium testing (the king of crazy wait statements, this matters in a bit) this all looked pretty reasonable. However on running the test, the assertion for the content that should be in one of the table rows would fail. I knew the mock was working from some previous testing, so I tossed in a `screen.debug()` command to see what the table looked like before the assertion.
 
 Sure enough the table rows were empty, though the header, title, and other static content was there. So all the content not part of the new `setState()` call was not there, but everything else was....suspicious. Maybe I need to...wait for the data to be there? How do I wait for a `setState()` command?
 
