@@ -14,7 +14,7 @@ menu:
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'github', link: 'https://www.github.com/rm-terrell'}
-- {icon: 'envelope', link: 'mailto:terrell.systems@gmail.com'}
+- {icon: 'envelope', link: 'mailto:rmterrell@dashdashforce.dev'}
 - {icon: 'rss-square', link: '/feed.xml'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
 
