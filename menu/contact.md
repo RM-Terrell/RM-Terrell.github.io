@@ -3,7 +3,7 @@ layout: page
 title: Contact
 ---
 
-For general contact email terrell.systems@gmail.com
+For general contact email rmterrell@dashdashforce.dev
 
 My Github [here](https://github.com/RM-Terrell)
 
