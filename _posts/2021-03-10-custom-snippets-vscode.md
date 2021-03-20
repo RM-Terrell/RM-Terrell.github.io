@@ -5,7 +5,7 @@ author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
 tags: [vscode, javascript]
-image: skin_track.jpgp
+image: skin_track.jpg
 ---
 A few snippet extensions I've installed have inspired me to venture into creating my own custom ones. Turns out VSCode has a great system for doing this and can be a huge time saver for boilerplate code.
 
