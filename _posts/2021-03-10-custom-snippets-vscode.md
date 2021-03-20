@@ -7,9 +7,10 @@ categories: journal
 tags: [vscode, javascript]
 image: skin_track.jpg
 ---
-A few snippet extensions I've installed have inspired me to venture into creating my own custom ones. Turns out VSCode has a great system for doing this and can be a huge time saver for boilerplate code.
+A few snippet extensions I've installed have inspired me to venture into creating my own custom ones. Turns out VS Code has a great system for doing this and can be a huge time saver for boilerplate code.
 
 ### The Initial Annoyance
+
 A snippet I've gotten a lot of use out of is `testa` which comes from the Jest Snippets extension (I think, I have a lot of extensions and its hard to tell at this point). This snippet scaffolds out an async
 jest test like this
 
@@ -37,6 +38,6 @@ The one tricky bit here was those `\n` characters. Those are to create new lines
 
 ### Syncing
 
-The other great thing about this solution, is that the file for custom snippets is tracked as part of VSCodes setting sync feature. So when you create custom snippets on one machine, you will have these on any other.
+The other great thing about this solution, is that the file for custom snippets is tracked as part of VS Code's setting sync feature. So when you create custom snippets on one machine, you will have these on any other.
 
 Happy snipping.
