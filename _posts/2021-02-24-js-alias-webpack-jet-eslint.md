@@ -84,6 +84,8 @@ import Checkbox from 'CoreComponents/Checkbox';
 
 and your application should build. Run a Webpack build to confirm, though if you're using Eslint it may be yelling at you along with VScode, and your Jests tests will have import errors. We'll fix those next.
 
+One thing worth considering here is making the alias name `CoreComponents` something more obviously different than your usual directories, for example `@CoreComponents` or some other non directory name symbol. This will help other developers who don't know about the under the hood aliases to realize that your aliased directory name isn't an _actual_ directory on the file system. It will also help you in 3 weeks when you have forgotten about the magic you've forged here. I'm going to just use `CoreComponents` for this example but you can follow whatever convention you think is most clear. Webpack will take care of the rest.
+
 ## Jest
 
 Next on our list is to get our tests passing again. You'll probably hit an error like this when you try to run them after updating your imports.
