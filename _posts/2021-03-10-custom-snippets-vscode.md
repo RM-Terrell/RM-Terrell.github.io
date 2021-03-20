@@ -22,11 +22,13 @@ This is very useful but each time I do it I need to go back, add a semi colon, a
 
 With <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> (assuming Windows, use CMND instead if on Mac) open up the command pallet and search for "Configure User snippets"
 
-![1](/assets/img/custom-snippets-vscode/snippet_setting_1.png)
+![first_setting](/assets/img/custom-snippets-vscode/snippet_setting_1.png)
+![first_setting](/assets/img/custom-snippets-vscode/snippet_setting_1.PNG)
+![powersh](/assets/img/powershell-to-bash/powersh.png)
 
 Click that option at the top then click the javascript option
 
-![2](/assets/img/custom-snippets-vscode/snippet_setting.png)
+![second_setting](/assets/img/custom-snippets-vscode/snippet_setting.png)
 
 Once you're in there you have a whole file to create your own custom snippets. I created the slightly modified version of the `testa` snippet like so
 
