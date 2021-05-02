@@ -14,7 +14,7 @@ A few snippet extensions I've installed have inspired me to venture into creatin
 A snippet I've gotten a lot of use out of is `testa` which comes from the Jest Snippets extension (I think, I have a lot of extensions and its hard to tell at this point). This snippet scaffolds out an async
 jest test like this
 
-![testa](/assets/img/custom-snippets-vscode/before_snippet.png)
+![before](/assets/img/custom-snippets-vscode/before_snippet.png)
 
 This is very useful but each time I do it I need to go back, add a semi colon, and make the test description a template literal instead of single quotes. This comes from the ESLINT rules I'm using (the semi colon) and personal preference for easy, long, indented test names (the template literal). Sure would be nice if I didn't have to make that edit every time right?
 
