@@ -8,11 +8,11 @@ tags: [python]
 image: winter_park_mary_jane.jpg
 ---
 
-My first programming languages were Javascript and C#, and at my current job I started working with Python for the first time. Since I learned Python primarily on the job, I dived into it with a very "alright lets just make this work" kind of attitude and breezed over some of the fundamentals. Over the years I've picked up a lot of things from co-workers far smarter than myself and Python is in general a pretty forgiving language when learned this way, but some holes have remained. In particular, Pythons behavior around assigning an updating lists has bitten me on a few occasions and I didn't quite fully understand why. Recently however I've gotten back to basics and been working through the Pluralsight Python course.
+My first programming languages were Javascript and C#, and at my current job I started working with Python for the first time. Since I learned Python primarily on the job, I dived into it with a very "alright lets just make this work" kind of attitude and breezed over some of the fundamentals. Over the years I've picked up a lot of things from co-workers far smarter than myself and Python is in general a pretty forgiving language when learned this way, but some holes have remained. In particular, Python's behavior around assigning and updating lists has bitten me on a few occasions and I didn't quite fully understand why. Recently however I've gotten back to basics and been working through the Pluralsight Python course.
 
 One core rule that is fundamental to Python and how it works has made my past troubles clearer:
 
-**All variable are objects in Python and a variable is just a named reference to that object. As a result. the assignment operator only binds objects to names, it never copies an object by value.**
+**All variable are objects in Python and a variable is just a named reference to that object. As a result, the assignment operator only binds objects to names, it never copies an object by value.**
 
 Lets see this in action.
 
