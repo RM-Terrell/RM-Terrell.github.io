@@ -8,7 +8,7 @@ tags: [rust]
 image: a_basin.jpg
 ---
 
-Having been raised in the Mad Max-esque hellscape that is JavaScript's scoping system, learning Rust has been a real breath of fresh air. However that doesn't make it totally free of some sneaky behaviors. One in particular is the concept of variable shadowing, and how it can lead to some odd code execution when re-declaring variables. Let's take a look.
+Having been raised in the Mad Max-esque craziness that is JavaScript's scoping system, learning Rust has been a real breath of fresh air. However that doesn't make it totally free of some sneaky behaviors. One in particular is the concept of variable shadowing, and how it can lead to some odd code execution when re-declaring variables. Let's take a look.
 
 ## Scoping
 

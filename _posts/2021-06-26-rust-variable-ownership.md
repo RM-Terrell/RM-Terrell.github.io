@@ -10,7 +10,7 @@ image: tetons.jpg
 
 One of the central concepts of Rust is variable ownership, and Rust implements rather strict rules around what variables have access or control over what resources at a given time to prevent race conditions or other mangling of data. In general, **there is only one variable that binds to a resource at a time**. The exception here will be with primitives as I will show later. So lets see this in action.
 
-### Collections
+## Collections
 
 One of my main languages currently is Python so I will start first by showing an example of code running in Python, that when done in Rust causes a violation of Rust's ownership principals.
 
@@ -60,7 +60,7 @@ If in this situation you simply want `beta` to be a copy of all the values in `a
 
 This rule around ownership follows for all collections in Rust, like vectors, arrays, dictionaries, sets, etc. However with primitive types the situation is a bit different.
 
-### Primitives
+## Primitives
 
 Copying of primitive types is very cheap as primitives are not pointers to data on the heap like a collection. As such, when you do the same sort of reassignment, Rust simply copies the value over into a new resource and assigns it to your variable as seen below.
 
@@ -86,7 +86,7 @@ Diosdado
 
 So everything works just fine and the new resource is created with the same value, but different pointers.
 
-### Boxing
+## Boxing
 
 If however you would like the same sort of behavior observed in collections, but with a primitive type, Rust can do that! Rust contains a feature called "boxing" documented [here](https://doc.rust-lang.org/std/boxed/struct.Box.html) that allows you to create a pointer for heap allocation for any type. If we wished to box Mr. Diosdado we would do it like so.
 
