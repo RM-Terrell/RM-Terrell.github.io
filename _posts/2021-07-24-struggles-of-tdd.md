@@ -85,4 +85,4 @@ I'm going to try this out in earnest with the next major React based feature I b
 
 ## Resources
 
-Online version of Obey the Testing Goat can be found [here](https://www.obeythetestinggoat.com/) which also contains links to buy print or digital version.
+Online version of Obey the Testing Goat can be found [here](https://www.obeythetestinggoat.com/) which also contains links to buy a print or digital version.
