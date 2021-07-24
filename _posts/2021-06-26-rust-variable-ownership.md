@@ -62,7 +62,7 @@ This rule around ownership follows for all collections in Rust, like vectors, ar
 
 ## Primitives
 
-Copying of primitive types is very cheap as primitives are not pointers to data on the heap like a collection. As such, when you do the same sort of reassignment, Rust simply copies the value over into a new resource and assigns it to your variable as seen below.
+Copying of primitive types is very cheap as primitives are not pointers to data on the heap like a collection. Their size is known at compile time so they are stored entirely on the stack. As such, when you do the same sort of reassignment, Rust simply copies the value over into a new resource and assigns it to your variable as seen below.
 
 ```rust
     let alpha = "Diosdado";
@@ -84,7 +84,7 @@ Diosdado
 0x7ffee15ea020
 ```
 
-So everything works just fine and the new resource is created with the same value, but different pointers.
+So everything works just fine and the new resource is created with the same value, but different pointers. One small wrinkle here is that the above example uses a string literal, not the `String` type, which is instead a heap allocated collection with a pointer. `String`s behave just like the vector examples in the previous sections.
 
 ## Boxing
 
