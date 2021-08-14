@@ -31,6 +31,7 @@ As such I went with a solution that many many articles recommended and I think s
 The HTML looks something like this:
 
 ```html
+{% raw  %}
     {% block content %}
         <div id="target-html-element-for-react"></div>
         <script>
@@ -40,6 +41,7 @@ The HTML looks something like this:
         <script src="{% static 'dist/intermediateParentComponentWrapper.js' %}"></script>
 
     {% endblock %}
+{% endraw  %}
 ```
 
 And the intermediate JS file something like this:
@@ -121,8 +123,10 @@ This makes the copy over part of the build process nicely centralized. No extern
 This app had a file called `base.html` which all other templates loaded into and contained all the scripts needed globally. In that I addded
 
 ```html
+{% raw  %}
     <script src="{% static 'dist/react.js' %}"></script>
     <script src="{% static 'dist/react-dom.js' %}"></script>
+{% endraw  %}
 ```
 
 If React is only needed on one page, these links could just be put on that one instead too.
@@ -186,6 +190,7 @@ module.exports = {
 And with that done I could now script link the built `ParentComponent` file right where I needed it used. Note the script link is now _above_ the HTMl it eventually lands in. This is because its just loading the ParentComponent library, which gets called in the render method, instead of loading an auto executing script which needed the target HTML element already present in order for it to work.
 
 ```html
+{% raw  %}
     {% block content %}
         <script type="module" src="{% static 'dist/ParentComponent.js' %}"></script>
 
@@ -203,6 +208,7 @@ And with that done I could now script link the built `ParentComponent` file righ
             );
         </script>
     {% endblock %}
+{% endraw  %}
 ```
 
 BOOM.
