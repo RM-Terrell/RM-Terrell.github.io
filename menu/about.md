@@ -6,14 +6,8 @@ photo_credit: "Sam Kahsnitz"
 image: st_george_mtb.jpg
 ---
 
-I am a full stack web developer living in Longmont Colorado, where I have been working at ArcherDX Inc (now Invitae Oncology) since January 2018 building web based genomic diagnostics tools using Python, Django, PSQL, Javascript, and React. In my time there I have contributed to projects both for pure research use and also regulated medical device products. My most recent work has involved integrating React, Jest, Webpack, and Babel into existing legacy products and also building out REST API endpoints in Django that are consumed by React.
+I am a software engineer living in Longmont Colorado, where I am currently working at NetApp utilizing Go, Kubernetes, Docker, and Python to build cloud data management applications. Previously I worked at ArcherDX (now Invitae Oncology) building web based genomic diagnostics tools using Python, Django, PSQL, Javascript, and React. I have contributed to Kubernetes powered data management applications, along with projects at ArcherDX both for pure research (RUO) and also regulated medical device products (IVD).
 
-I have a passion for well tested and documented code with experience in Jest, React Testing Library, Enzyme, Pytest, Nose2, and Selenium, and am currently learning Rust on the side.
+I have a passion for well tested and documented code with experience in Jest, React Testing Library, Enzyme, Pytest, Nose2, Golang test runner, Selenium, Jira, and Confluence.
 
-My distractions from work include skiing, running, PC gaming, and mountain biking.
-
-<!-- ## Testimonials
-
-> Testing
->
-> -- <cite>Michael Montgomery</cite> -->
+My distractions from work include mountain biking, skiing, and PC gaming. I'm also actively trying to be a less terrible cook.

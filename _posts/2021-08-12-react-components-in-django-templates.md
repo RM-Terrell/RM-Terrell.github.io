@@ -131,7 +131,7 @@ This app had a file called `base.html` which all other templates loaded into and
 
 If React is only needed on one page, these links could just be put on that one instead too.
 
-In order to test this worked I jumped into an HTML file and put a `ReactDOM.render()` call in it rendering an empty component. Holy crap it worked! At least as well as an empty render call can without throwing errors.... With that in place next up was the actual React components that build the feature. First up to get them in UMD format so they can be called externally, I add the following lines to the `webpack.config.js` file (the common one shared by both dev and prod):
+In order to test this worked I jumped into an HTML file and put a `ReactDOM.render()` call in it rendering an empty component. Holy crap it worked! At least as well as an empty render call can without throwing errors.... With that in place next up was the actual React components that build the feature. First up to get them in UMD format so they can be called externally, I added the following lines to the `webpack.config.js` file (the common one shared by both dev and prod):
 
 ```javascript
     output: {
@@ -158,7 +158,7 @@ module.exports = {
         path: path.resolve(__dirname, 'static/dist'),
         filename: '[name].js',
         library: ['[name]'],
-        libraryTarget: 'umd',
+        libraryTarget: 'umd', // library builds with exports exposed for external calls
         libraryExport: 'default',
     },
     new CopyPlugin({
@@ -177,7 +177,7 @@ module.exports = {
         rules: [
             {
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader', // babel things for JSX compilation
                 },
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -187,7 +187,7 @@ module.exports = {
 };
 ```
 
-And with that done I could now script link the built `ParentComponent` file right where I needed it used. Note the script link is now _above_ the HTMl it eventually lands in. This is because its just loading the ParentComponent library, which gets called in the render method, instead of loading an auto executing script which needed the target HTML element already present in order for it to work.
+And with that done I could now script link the built `ParentComponent` file right where I needed it used. Note in the code below, that the script link is now _above_ the HTMl it eventually lands in. This is because it's just loading the ParentComponent library, which gets called in the render method, instead of loading an auto executing script which needed the target HTML element already present in order for it to work.
 
 ```html
 {% raw  %}
@@ -221,7 +221,7 @@ One other wrinkle here is that you'll see I didn't use JSX syntax in the `ReactD
 
 Happy webpacking.
 
-Heres some of the resources I used to figure this all out:
+Here's some of the resources I used to figure this all out:
 
 <https://www.valentinog.com/blog/drf/>
 <https://hackernoon.com/reconciling-djangos-mvc-templates-with-react-components-3aa986cf510a>
