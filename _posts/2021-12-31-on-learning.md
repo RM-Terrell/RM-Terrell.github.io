@@ -5,7 +5,7 @@ author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
 tags: [learning, reflections, javascript, python, go]
-image: chasm.jpg
+image: chasm.JPG
 ---
 
 What follows below are my reflections on the process of learning hard things. There's no code in this post but it all applies to the process of learning computer programming and similarly complex subjects. My learning style will obviously not fit all but I hope this can be a useful road map to many of those trying to learning computer programming on their own, or who are seeking some additions help to their learning at university. I don't pretend that any of this is fully original and I stand on the shoulders of a few particularly towering giants who I will mention. Books and resources linked at the bottom.
