@@ -28,12 +28,9 @@ So off he went to find a giant butt.
 
 What he found wound up being something of the company mascot until the pandemic took away our in-office desks that were his home. Meet Testy The Testing Horse.
 
-![testy_1](/assets/img/shame-trophy/testy_1.jpg)
-![testy_2](/assets/img/shame-trophy/testy_2.jpg)
+![testy](/assets/img/shame-trophy/testy.jpg)
 
-Testy came from the lands of Amazon and was a bobblehead statue, but instead of the head bobbling it was his butt. He was custom engraved on the base with
-
-> Roses are red, Violets are blue, Unexpected '{' on line 32.
+Testy came from the lands of Amazon and was a bobblehead statue, but instead of the head bobbling it was his butt.
 
 When a test running in automation broke, or the application build itself broke, when the culprit was identified who merged in the code that caused the failure, Testy was plopped in all his bobbling buttheaded glory onto that persons desk. Adding to the hilarity was that most of us worked in an semi-open office plan so it was easy to spot him being dropped on someones desk with some ceremony. And there he would stay until the next test broke, even if the original offending failing test had been fixed. We even made things professional and had a Confluence page called "Where is Testy?" that kept track of his location around the office for when he needed to migrate.
 
