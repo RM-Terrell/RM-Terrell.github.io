@@ -5,7 +5,7 @@ author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
 tags: [go, unit testing, tests, testing]
-image: water_flowing.jpg
+image: river_flowing.jpg
 ---
 
 This post was inspired by a few months of adventures at my current company in trying to increase unit test coverage on a series of Go packages that make use of AWS, Azure, GCP and other related cloud SDKs. The issue of how to simulate responses from these SDK calls that were deeply imbedded into the source code is what inspired this eventual solution. I don't pretend this is the absolute be all end all of unit testing with third party SDKs but it resulted in a really useful way of getting good line coverage for diverging code paths while learning about some fundamental Go features, in this case Interfaces.
