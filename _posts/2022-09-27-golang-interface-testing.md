@@ -67,7 +67,7 @@ type UsefulStuffProvider struct {
     SDKWrappers ISDKWrappers
 }
 
-func (p *UserStuffProvider) DoAUsefulThing(input string) (string, error) {
+func (p *UsefulStuffProvider) DoAUsefulThing(input string) (string, error) {
     sdkResult, err := p.SDKWrappers.SDKDoAThingWrapper(input)
     updatedValues := ""
     if err != nil {
@@ -87,10 +87,23 @@ type ISDKWrappers interface {
     SDKDoAThingWrapper(input string) (string, error)
 }
 
+type SDKProviderWrappers {}
+
 func SDKDoAThingWrapper(input string) (string, error) {
     sdkResult, err := SDKPackage.DoAThing(input)
     return sdkResult, err
 }
+```
+
+And then where `DoAUsefulThing()` is implemented set it up like so
+
+```go
+provider := &UsefulStuffProvider{
+    SDKWrappers: &SDKProviderWrappers{}
+}
+
+provider.DoAUsefulTing()
+
 ```
 
 A lot just happened. First off we have a new type `ISDKWrappers` which is an interface. The `I` at the beginning is a convention from a lot in other languages to indicate an interface but is not required in Go. Feel free to use another, more clear name if you wish. Now the tricky thing about Go and interfaces is that *interfaces are implicitly implemented*. In other words _any type that has ALL the method signatures that are part of the interface, implements the interface_. Other languages require an `implements` keyword or something similar to use the interface. Not Go. Just know that you need ALL the exact same method sigs to use your interface. If you're missing one it wont work. This will come in needed when we build our testing versions later. More on interfaces [here](https://www.golangprograms.com/go-language/interface.html).
