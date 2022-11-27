@@ -2,7 +2,7 @@
 layout: page
 title: "About the Author"
 author: "RM Terrell"
-photo_credit: "Sam Kahsnitz"
+photo_credit: "Reed Terrell"
 image: est.jpg
 ---
 
@@ -12,4 +12,4 @@ I have a passion for well tested and documented code with experience in Jest, Re
 
 My distractions from work include mountain biking, skiing, and PC gaming. I'm also actively trying to be a less terrible cook.
 
-You can view my resume [here](https://docs.google.com/document/d/e/2PACX-1vRixKLISPrUfk8sviId31BwFuy1U-CLvKBhIMU-jb8U4Ms_wgF-BIFgy0Z_hL5D8hAltf2IPu3azc_P/pub)
+You can view my resume [here](https://docs.google.com/document/d/e/2PACX-1vTCjtVrsujS2JJ5bD-6A8hgdf03KZP6U41bS71waUa8rK8cTG4kwiCbQ8q3FeLgpRd6zRPDUMWldm9v/pub)
