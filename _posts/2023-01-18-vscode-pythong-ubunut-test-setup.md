@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to get setup the VSCode python unit test extension in subsystem linux"
+title: "How to setup the VSCode python unit test extension in subsystem linux"
 author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
