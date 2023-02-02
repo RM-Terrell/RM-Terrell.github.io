@@ -12,7 +12,7 @@ You read that right. I've been writing code on an iPad recently and in 2023 it a
 
 ## The problem and initial disclaimer
 
-You can't _actually_ run Python code on an iPad. Or any custom code for that matter. iPadOS doesn't let you just execute custom code in its environnement. As such this solution involves actually running the code on a remote machine and making use of the fact that VSCode runs in a web browser pretty well now. If you can't have a stable (though not necessarily fast) internet connection then this solution won't work for you. I initially wanted to figure out how to write Python (along with other languages) on an iPad as an on the go solution to working through Code Wars problems while at coffee shops and such so constant internet connection isn't an issue in my case.
+You can't _actually_ run Python code on an iPad. Or any custom code for that matter. iPadOS doesn't let you just execute custom code in its environment. As such this solution involves actually running the code on a remote machine and making use of the fact that VSCode runs in a web browser pretty well now. If you can't have a stable (though not necessarily fast) internet connection then this solution won't work for you. I initially wanted to figure out how to write Python (along with other languages) on an iPad as an on the go solution to working through Code Wars problems while at coffee shops and such so constant internet connection isn't an issue in my case.
 
 ## First attempt using the Github code editor
 
