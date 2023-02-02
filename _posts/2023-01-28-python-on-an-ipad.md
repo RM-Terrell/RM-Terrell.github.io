@@ -8,7 +8,7 @@ tags: [python, ipad, vscode, github]
 image: leaves.JPG
 ---
 
-You read that right. I've been writing code on an iPad recently and in 2023 it actually works pretty well thanks to Github CodeSpaces. The set up was pretty darn easy but once again my old nemesis PYTHONPATH came back to bite me. As such I'm going to document how I got it all working for those of you who want hyper mobile code writing without compromising much in terms of editor experience. Note I said "much" as there is a few small issues with this setup but nothing that's a total show stopper.
+You read that right. I've been writing code on an iPad recently and in 2023 it actually works pretty well thanks to Github Code Spaces. The set up was pretty darn easy but once again my old nemesis PYTHONPATH came back to bite me. As such I'm going to document how I got it all working for those of you who want hyper mobile code writing without compromising much in terms of editor experience. Note I said "much" as there is a few small issues with this setup but nothing that's a total show stopper.
 
 ## The problem and initial disclaimer
 
