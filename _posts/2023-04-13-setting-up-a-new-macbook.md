@@ -14,7 +14,7 @@ I recently started a new position at Yes Energy and with a new job comes a new l
 
 ### Homebrew
 
-Homebrew is going to power all of the installs ran below so start with that. Install info and docs can be found [here](https://brew.sh/) or just run
+Homebrew is going to power many of the installs ran below so start with that. Install info and docs can be found [here](https://brew.sh/) or just run
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -68,6 +68,8 @@ brew install --cask spotify
 
 ## The small things
 
+### Control customizations
+
 I'm weird when it comes to touchpads and mice. I find the normal behavior of a touchpad on a Mac very intuitive and don't need it changed at all BUT the default scroll direction and accelerated cursor when using a mouse drives me insane. Luckily there are two useful utilities that allow for eliminating mouse acceleration and allowing really detailed scroll control for multiple devices. Some of this used to be doable via terminal commands but those no longer seem to stick on Ventura. Thanks for that Apple.
 
 ### Linear Mouse
@@ -84,7 +86,9 @@ brew install --cask scroll-reverser
 
 Then once its running, also set its options to "run on login". Sure would be nice if the OS just had these options built in.
 
+### ZSA firmware flasher
 
+I'm currently using a ZSA Moonlander keyboard which can be flashed with customized firmware. The customization tool can be found [here](https://www.zsa.io/oryx/) and the flasher [here](https://www.zsa.io/wally).
 
 ### Preventing F11 from doing that silly nonsense with your desktop
 
