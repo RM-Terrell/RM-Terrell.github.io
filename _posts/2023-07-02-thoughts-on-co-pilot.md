@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thoughts on Github Co-Pilot. July 2023"
+title: "Initial thoughts on Github Co-Pilot"
 author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
