@@ -5,7 +5,7 @@ author: "RM Terrell"
 photo_credit: "RM Terrell"
 categories: journal
 tags: [java, co-pilot, ai, vscode]
-image: DSCF0657b.JPG
+image: DSCF0657b.jpg
 ---
 
 I’ve developed something of a habit now of starting jobs that require using programming languages I’ve never written a single line of. I know that’s not unusual in this industry but it’s becoming funny. This however is the first time I’ve had a tool like Co-Pilot and AI language models to help out with that process.
