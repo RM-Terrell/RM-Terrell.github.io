@@ -25,7 +25,7 @@ One section throws a gauntlet of sorts that I'm finally taking seriously. In "To
 > - Display compilation errors in the current project.
 > - Run the current project’s tests.
 
-Upon reading this section again I was happy to be able to do about 70% of these in VS Code. My mom was actually a medical transcriptionist for a time and as a result when she taught me to use a computer she was already far more fluent that most in text editing shortcuts than most people due to the value of speed when dictating doctors. What a blessed upraising for a future software engineer as most of those shortcuts still work in modern text editors.
+Upon reading this section again I was happy to be able to do about 70% of these in VS Code. My mom was actually a medical transcriptionist for a time and as a result when she taught me to use a computer she was already far more fluent than most in text editing shortcuts than most due to the value of speed when dictating doctors and the fact she started that job before mice were common. What a blessed upraising for a future software engineer as most of those shortcuts still work in modern text editors.
 
 In this post I'm going to walk through the Pragmatic Programmer fluency challenges and how to do them along with as many different solutions to those tasks as I can find, as a few of them have multiple solutions depending on your keyboard, OS, and project. I will specify when commands differ between operating systems or frequently with Windows/Mac I'll just say
 
