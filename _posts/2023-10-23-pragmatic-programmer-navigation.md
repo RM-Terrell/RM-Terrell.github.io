@@ -60,7 +60,7 @@ That last one fulfills the "select by paragraph" challenge too.
 
 This was one I didn't know how to do before starting this challenge and I'm very glad I did. There's a few solutions to these.
 
-To jump delimiters: To go from one end of a parenthesis or bracket pair you can use: <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>`\`</kbd> on Windows, and on Mac you can use <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>`\`</kbd>. I for one had no idea this existed and feel very dumb for not using it all these years especially in massive functions or nested data structures.
+To jump delimiters: To go from one end of a parenthesis or bracket pair you can use: <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>\</kbd> on Windows, and on Mac you can use <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>\</kbd>. I for one had no idea this existed and feel very dumb for not using it all these years especially in massive functions or nested data structures.
 
 To jump functions/methods: When you're in a file that has many functions, methods etc you can use what VS Code calls "go to symbol" via <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> on Windows, and on Mac its <kbd>CMD</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>. This creates a drop down like this
 
@@ -83,7 +83,7 @@ Two solutions to this one in VS Code. The simplest on Windows is <kbd>CTRL</kbd>
 
 ### Split the editor window into multiple panels, and navigate between them.
 
-To split the editor into two panels on Windows you can use <kbd>CTRL</kbd> + <kbd>`\`</kbd> and on Mac its <kbd>CMD</kbd> + <kbd>`\`</kbd>. This opens your current file into another split panel.
+To split the editor into two panels on Windows you can use <kbd>CTRL</kbd> + <kbd>\</kbd> and on Mac its <kbd>CMD</kbd> + <kbd>\</kbd>. This opens your current file into another split panel.
 
 There are two different sets of shortcuts for navigating the tabs and groups of tabs created by this. One Windows, to navigate to the first editor group use <kbd>CTRL</kbd> + <kbd>1</kbd> and use <kbd>ALT</kbd> + <kbd>1</kbd> for going to a specific tab within that group. You can sub out `1` for any other number depending where you want to go.
 
