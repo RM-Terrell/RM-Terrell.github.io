@@ -8,8 +8,6 @@ tags: [vscode, pragmatic_programmer]
 image: ptarmigan.JPG
 ---
 
-## Pragmatic Programmer Revisited
-
 Years ago I read Pragmatic Programmer by Andy Hunt and David Thomas. Because I was pretty new in my career, a lot of it didn't sink in well or have a ton of meaning to me although it was still a very valuable read. Like watching that movie when you're 9 years old that in adulthood takes on a whole new meaning. Well I've been re-reading it and thoroughly enjoying my second go through.
 
 One section throws a gauntlet of sorts that I'm finally taking seriously. In "Topic 18: Power Editing" the authors present the idea of being fluent in your editor of choice and give the following challenges to be able to do without touching the mouse:
