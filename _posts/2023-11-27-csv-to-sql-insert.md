@@ -29,6 +29,8 @@ INSERT INTO testing-data (ID, NAME, COUNT, CREATION_DATE, URL) VALUES (2,'anothe
 
 This allowed me to insert each row of the CSV on its own into the table `testing-data` with the types and table name being configurable. So a pretty simple algorithm here. For each row of CSV, capture each column handling its data type and assembling it into an `INSERT INTO` string with the names of the columns extracted and used for the first part of the `INSERT` statement plus an `ID` at the beginning. The values themselves should then be used for the `VALUES` portion of the statement including an `ID` column inserted at the beginning and incrementing with each row. Handle nulls. Add a semi colon at the end so it won't explode. Sounds a bit like an interview question.
 
+## The solution
+
 What I came up with was this.
 
 ```python
@@ -111,6 +113,8 @@ if __name__ == "__main__":
 Where the CSV data lives right next to the script in a file called `sample_data.csv`, and with the types, table name, and column names hard coded into the `main` block of the script. That could just as easily be factored out into params for the script itself and honestly probably should especially if this script were to sit under automation of some kind.
 
 From there things are pretty straight forward. Using Pythons excellent `with` syntax the file is opened at the beginning (`seek(0)`) and it begins building the SQL statement inside as part of the `sql_insert` variable. One tricky bit here was handling quotes. The `quote_pattern` variable handles whether to use double or single quotes, SQL being kind of a funny beast and accepting different syntaxes in different systems. In my case I wanted single quotes. From there I handle the empty value case and convert it to `NULL`, along with cases for the 4 different data types that I am using as part of the `query_types` param.
+
+## Further musings on AI
 
 Co Pilot proved really useful for this script as I already had a pretty good idea of what I wanted. Co Pilot I find generally works best given very good specific direction, not just "make me a script that does X" although it can occasionally handle that. In this case it was great for smashing out syntax like string replaces, and even inferring the next case `if` case I needed to handle. Like Intellisense on steroids. I have a feeling the docstring I added at the beginning helped fuel the model too to know what I wanted to achieve and with what values.
 
