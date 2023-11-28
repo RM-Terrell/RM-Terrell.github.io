@@ -116,6 +116,6 @@ From there things are pretty straight forward. Using Pythons excellent `with` sy
 
 ## Further musings on AI
 
-Co Pilot proved really useful for this script as I already had a pretty good idea of what I wanted. Co Pilot I find generally works best given very good specific direction, not just "make me a script that does X" although it can occasionally handle that. In this case it was great for smashing out syntax like string replaces, and even inferring the next case `if` case I needed to handle. Like Intellisense on steroids. I have a feeling the docstring I added at the beginning helped fuel the model too to know what I wanted to achieve and with what values.
+Co Pilot proved really useful for this script as I already had a pretty good idea of what I wanted. Co Pilot I find generally works best given very good specific, narrow directions. Not just "make me a script that does X" although it can occasionally handle that. In this case it was great for smashing out syntax like string replaces, and even inferring the next `if` case I needed to handle. Like Intellisense on steroids. I have a feeling the docstring I added at the beginning helped fuel the model too to know what I wanted to achieve and with what values though I'm not going to dig too deep into that lest I create some kind of Doc String Cargo Cult for AI.
 
 I swear SQL and Python will be with us forever. Such useful tools.
